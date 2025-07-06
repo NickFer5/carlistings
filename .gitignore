@@ -3,7 +3,7 @@ __pycache__/
 *.pyc
 
 # Environment
-venv/
+nick_venv/
 
 # Django
 db.sqlite3
