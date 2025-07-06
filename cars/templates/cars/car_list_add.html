@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Marketplace</title>
+</head>
+<body>
+    <h1>Available Cars</h1>
+    <ul>
+        {% for car in cars %}
+            <li>
+                {{ car.year }} {{ car.make }} {{ car.model }} {{ car.trim }} - ${{ car.price }}
+                <br>{{ car.description }}
+            </li>
+        {% empty %}
+            <li>No cars listed yet.</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+    <h2>Sell Your Car</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Listing</button>
+    </form>
+</body>
+</html>
